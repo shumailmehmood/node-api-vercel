@@ -6,7 +6,7 @@ var morgan = require("morgan");
 const config = require("config");
 var fs = require("fs");
 var cors = require("cors");
-
+const appRoute = require("./App/v1/api/api");
 require("dotenv").config();
 const app = express()
 const PORT = 4000
@@ -27,6 +27,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use("/api/v1", appRoute);
 // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
 //     next(createError(404));
