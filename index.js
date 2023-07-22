@@ -6,7 +6,7 @@ var morgan = require("morgan");
 const config = require("config");
 var fs = require("fs");
 var cors = require("cors");
-var app = express();
+
 require("dotenv").config();
 const app = express()
 const PORT = 4000
