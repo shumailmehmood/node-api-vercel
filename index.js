@@ -1,6 +1,5 @@
 const express = require('express')
 var createError = require("http-errors");
-var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var morgan = require("morgan");
@@ -22,12 +21,12 @@ mongoose
     .then(() => console.log("MongoDb successsFully Connected!!"))
     .catch((err) => console.log("Errror in connecting mongodb", err));
 
-// app.use(morgan());
-// app.use("/uploads/", express.static("uploads"));
-// app.use(cors());
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use(morgan());
+app.use("/uploads/", express.static("uploads"));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 
 app.get('/', (req, res) => {
